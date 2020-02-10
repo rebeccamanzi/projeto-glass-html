@@ -1,0 +1,130 @@
+@charset "UTF-8"; 
+@font-face{
+    font-family: 'FonteLogo';
+    src: url("../_fonts/bubblegum-sans-regular.otf");
+}
+
+body {    
+    background-color: hsla(0, 0%, 53%, 0.5);    
+    color: rgba(0, 0, 0, 0.8);   
+}
+
+div#interface {
+    width: 900px; 
+    background-color: #ffffff;
+    margin: -30px auto 0px auto; /* margens (cima, esquerda, baixo, direita) */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, .5);
+    padding: 30px;
+}
+
+p {
+    text-align: justify;
+    text-indent: 50px;
+}
+
+img#icone { /* imagem do oculos */
+    position: absolute;
+    left: 960px;
+    top: 80px;
+}
+
+#cabecalho {
+    border-bottom: 1px #606060 solid;
+    height: 180px;
+    background: url("../_imagens/glass-logo-peq.jpg") no-repeat 0px 100px;
+    /* (../) para voltar uma pasta, pois este arquivo está na pasta css e a imgagem esta em outra pasta */
+}
+
+#cabecalho h1 {
+    font-family: 'FonteLogo', sans-serif;
+    font-size: 30pt;
+    color: #606060;
+    text-shadow: 1px 1px 1px rgba(0,0,0,.6);
+    padding: 5px;
+    margin-bottom: 0px;
+}
+
+#cabecalho h2 {
+    font-family: Arial,sans-serif;
+    color: #888888;
+    font-size: 15pt;
+    padding: 0px;
+    margin-top: 0px;
+}
+
+/* text-align: center (centralizado)
+text-align: justify (texto justificado)
+text-indent: marca de parágrafo (afasta para esquerda) */
+
+/* FORMATAÇÃO DE IMAGENS(tag figure) COM LEGENDAS(tag figcaption) */
+
+figure.foto-legenda{ 
+    position: relative;
+    border: 8px solid white;
+    box-shadow: 1px 1px 4px black;
+    display: inline-block;
+
+}
+figure.foto-legenda img {     
+    width: 600px;
+    height: 338px;
+}
+
+figure.foto-legenda figcaption { 
+    opacity: 0; /*deixará toda a legenda escondida(transparente)*/
+    position: absolute;
+    top: 0px;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+    width: 100%; /* vai ficar em cima da imagem toda*/
+    height: 100%;
+    padding: 10px; /* espaço entre a borda e o conteúdo (espaçamento)*/
+    box-sizing: border-box; /*box(width, height) dentro das extensões da borda*/
+    transition: opacity 1s; /* transição mais lenta, suave (e não imediata) */
+}
+
+figure.foto-legenda:hover figcaption { /*formatação específica quando passar o mouse no objeto (figcaption)*/
+    opacity: 1; /* opacidade 100% (sem transparência) */
+
+}
+
+/* FORMATAÇÃO MENU */
+
+#menu {
+    display: block; /* menu será exibido como um bloco */
+}
+
+#menu ul{ /* se aplicará a todos elementos <nav> com id=menu que sejam do tipo <ul> (lista desordenada) */
+    list-style: none; /* vai tirar os ícones de tópicos */
+    text-transform: uppercase; /* deixar tudo maiusculo */
+    position: absolute; /* posicionar livremente em qualquer posição da tela */
+    /* position relative -> pode posicionar apenas dentro do bloco nav */
+    top: -20px; /* colado na parte superior */
+    left: 500px; /* distância à esquerda */
+}
+
+#menu li { /* cada linha do ul (lista) */
+    display: inline-block; /* bloco em uma linha só (horizontal) */
+    background-color: silver;
+    padding: 10px; /* dentro das bordas (interno) */
+    margin: 2px; /* além das bordas (externo) */
+    transition: background-color 1s;
+}
+
+#menu li:hover {
+    background-color: #606060;
+}
+
+#menu h1{
+    display: none; /* não vai aparecer o nome "Menu Principal" */
+}
+
+#menu a { /*links*/
+    color: black;
+    text-decoration: none;
+}
+
+#menu a:hover { /* link ao passar mouse */
+    color: white;
+    text-decoration: underline;
+}
